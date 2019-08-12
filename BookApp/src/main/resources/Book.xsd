@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://tekleads.in/book/types">
+	<xs:element name="bookRequestType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="book-isbn" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bookResponseType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="book-name" type="xs:string"/>
+				<xs:element name="book-isbn" type="xs:string"/>
+				<xs:element name="category" type="xs:string"/>
+				<xs:element name="author" type="xs:string"/>
+				<xs:element name="price" type="xs:double"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

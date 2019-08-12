@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tekleads.in/book/types" targetNamespace="http://tekleads.in/book/types">
+	<wsdl:types>
+		<xs:schema >
+			<xs:import namespace="http://tekleads.in/book/types" schemaLocation="Book.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="bookRequestType">
+		<wsdl:part name="parameter" element="tns:bookRequestType"/>
+	</wsdl:message>
+	<wsdl:message name="bookResponseType">
+		<wsdl:part name="parameter" element="tns:bookResponseType"/>
+	</wsdl:message>
+	<wsdl:portType name="EBookService">
+		<wsdl:operation name="getBookByIsbn">
+			<wsdl:input message="tns:bookRequestType"/>
+			<wsdl:output message="tns:bookResponseType"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EBookServiceImplBinding" type="tns:EBookService">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getBookByIsbn">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BookServiceImplService">
+		<wsdl:port name="BookServiceImplServicePort" binding="tns:EBookServiceImplBinding">
+			<soap:address location="http://localhost:8085/BookApp/getBook"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
