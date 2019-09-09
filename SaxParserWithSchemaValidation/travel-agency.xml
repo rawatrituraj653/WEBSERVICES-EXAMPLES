@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<travel-agency>
+	<international-flight>
+		<flight-id>AIR123F</flight-id>
+		<pilot-name>James Franklin</pilot-name>
+		<from>Hyderabad</from>
+		<to>Singapur</to>
+		<agent-id>3211</agent-id>
+	</international-flight>
+</travel-agency>

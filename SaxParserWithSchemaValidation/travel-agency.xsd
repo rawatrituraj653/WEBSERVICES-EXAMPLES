@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:complexType name="InternationalflightType">
+	<xs:sequence>
+		<xs:element name="flight-id" type="xs:string"/>
+		<xs:element name="pilot-name" type="xs:string"/>
+		<xs:element name="from" type="xs:string"/>
+		<xs:element name="to" type="xs:string"/>
+		<xs:element name="agent-id" type="xs:positiveInteger"/>
+	</xs:sequence>
+</xs:complexType>	
+	<xs:element name="travel-agency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="international-flight" type="InternationalflightType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

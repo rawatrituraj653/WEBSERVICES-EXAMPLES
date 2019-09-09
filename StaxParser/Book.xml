@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book type="java">
+	<id>101</id>
+	<name>spring</name>
+	<author gender="male" comapny="pivotal">
+		<aname>Rod johnson </aname>
+		<aemail>Rod@gmail.com</aemail>
+	</author>
+</book>

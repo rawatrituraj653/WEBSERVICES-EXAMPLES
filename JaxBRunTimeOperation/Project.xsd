@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by org (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.ms.in/project/types" targetNamespace="http://www.ms.in/project/types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ProjectType">
+		<xs:sequence>
+			<xs:element name="proj-id" type="xs:int"/>
+			<xs:element name="proj-name" type="xs:string"/>
+			<xs:element name="proj-date" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="project" type="ns1:ProjectType"/>
+</xs:schema>

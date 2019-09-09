@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:purchase-order xmlns:ns2="http://www.purchase.order/types">
+	<order-items>
+		<items>
+			<item>
+				<item-code>1C001</item-code>
+				<quantity>123</quantity>
+			</item>
+			<item>
+				<item-code>1C002</item-code>
+				<quantity>220</quantity>
+			</item>
+		</items>
+	</order-items>
+	<shipping-address>
+		<line1>Mythrivanam</line1>
+		<line2>Ameerpet</line2>
+		<city>Hyderabd</city>
+		<zip>500016</zip>
+		<state>Telangana</state>
+		<mobile>8966055458</mobile>
+	</shipping-address>
+</ns2:purchase-order>
