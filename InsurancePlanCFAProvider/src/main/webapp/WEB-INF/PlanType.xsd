@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://myinsurancepolicy.org/plan/types"
+xmlns:pt="http://myinsurancepolicy.org/plan/types"
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:complexType name="PlanType">
+		<xs:sequence>
+			<xs:element name="plan-name" type="xs:string"/>
+			<xs:element name="plan-duration" type="xs:double"/>
+			<xs:element name="installment" type="xs:int"/>
+			<xs:element name="person-name" type="xs:string"/> 
+			<xs:element name="age" type="xs:int"/>
+		</xs:sequence>		
+	</xs:complexType>
+<xs:complexType name="PlanInfoType">
+			<xs:sequence>
+				<xs:element name="person-name" type="xs:string"/>
+				<xs:element name="plan-status" type="xs:boolean"/>
+				<xs:element name="benefit-amt" type="xs:double"/>
+				<xs:element name="credit-amt" type="xs:double"/>
+				<xs:element name="pending-amt" type="xs:double"/>
+			</xs:sequence>
+		</xs:complexType>
+
+<xs:element name="plan-type" type="pt:PlanType"/>
+		
+	<xs:element name="plan-info" type="pt:PlanInfoType"/>
+</xs:schema>
+

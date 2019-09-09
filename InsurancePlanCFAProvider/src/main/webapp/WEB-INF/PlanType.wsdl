@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:prs="http://myservice.org"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://myinsurancepolicy.org/plan/types" targetNamespace="http://myinsurancepolicy.org/plan/types">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://policybazar.com/plan" elementFormDefault="qualified">
+			<xs:import namespace="http://myinsurancepolicy.org/plan/types" schemaLocation="PlanType.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="PlanTypeRequest">
+		<wsdl:part name="planType" element="tns:plan-type"/>
+	</wsdl:message>
+	<wsdl:message name="PlanInfoResponse">
+		<wsdl:part name="planInfo" element="tns:plan-info"/>
+	</wsdl:message>
+	<wsdl:portType name="EInsuranceTest">
+		<wsdl:operation name="getInsurancePlanInfo">
+			<wsdl:input message="tns:PlanTypeRequest"/>
+			<wsdl:output message="tns:PlanInfoResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="InsuranceServiceBinding" type="tns:EInsuranceTest">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getInsurancePlanInfo">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="InsuranceService">
+		<wsdl:port name="EInsuranceTest" binding="tns:InsuranceServiceBinding">
+			<soap:address location="http://localhost:8085/InsurancePlanCFAProvider/getInfo"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
