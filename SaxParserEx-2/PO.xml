@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchase-order id="AMZ20WA" name="Amazon">
+	<order-item>
+		<items>
+			<item>
+				<item-id>101ESE</item-id>
+				<quantity>300</quantity>
+			</item>
+			<item>
+				<item-id>102MET</item-id>
+				<quantity>400</quantity>
+			</item>
+		</items>
+	</order-item>
+	<shipping-address>
+		<line1>Sai_Baba_Boys_Hostel</line1>
+		<line2>Ameerpet</line2>
+		<city>Hyderabad</city>
+		<state>Telangana</state>
+		<zip>500016</zip>
+		<country>India</country>
+	</shipping-address>
+</purchase-order>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book type="java" author="rod Johnson" date="20July2019">
+	<id>123</id>
+	<name>Spring</name>
+	<price>230.90</price>
+</book>
