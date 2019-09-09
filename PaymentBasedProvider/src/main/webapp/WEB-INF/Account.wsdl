@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://paytm.payments.org/binding" xmlns:ser="http://flipkart.com/mobile/mi" targetNamespace="http://flipkart.com/mobile/mi">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://paytm.payments.org/binding" elementFormDefault="qualified">
+			<xs:include schemaLocation="Account.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="AccountInfoRequest">
+		<wsdl:part name="acoount-data" element="xsd:account-info-request"/>
+	</wsdl:message>
+	<wsdl:message name="InvoiceInfo">
+		<wsdl:part name="parameter" element="xsd:invoice-info-response"/>
+	</wsdl:message>
+	<wsdl:portType name="IAtm">
+		<wsdl:operation name="getInvoiceInfo">
+			<wsdl:input message="ser:AccountInfoRequest"/>
+			<wsdl:output message="ser:InvoiceInfo"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="IAtmImpl" type="ser:IAtm">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getInvoiceInfo">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="IAtmImpl">
+		<wsdl:port name="IAtm" binding="ser:IAtmImpl">
+			<soap:address location="http://localhost:8085/PaymentBasedProvider/getInvoice"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

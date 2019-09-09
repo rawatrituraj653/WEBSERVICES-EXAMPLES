@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://paytm.payments.org/binding" targetNamespace="http://paytm.payments.org/binding" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="TransactionInfo">
+		<xs:sequence>
+			<xs:element name="atm-id" type="xs:long"/>
+			<xs:element name="pin" type="xs:int"/>
+			<xs:element name="amount" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccountInfo">
+		<xs:sequence>
+			<xs:element name="acc-id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="age" type="xs:int"/>
+			<xs:element name="branch" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InvoiceInfo">
+		<xs:sequence>
+			<xs:element name="invoice-info" type="xs:string"/>
+			<xs:element name="invoice-gen-date" type="xs:string"/>
+			<xs:element name="status" type="xs:string"/>
+			<xs:element name="denial-rsn" type="xs:string"/>
+			<xs:element name="tx-no" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="account-info-request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="account-info" type="tns:AccountInfo"/>
+				<xs:element name="transaction-info" type="tns:TransactionInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="invoice-info-response" type="tns:InvoiceInfo" />
+</xs:schema>
